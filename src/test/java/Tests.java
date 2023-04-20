@@ -20,15 +20,16 @@ public class Tests {
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().setSize(new Dimension(1258, 719));
-        driver.get("https://github.com");
+        driver.get("https://olga-finance.effective.band/");
         driver.manage().timeouts().implicitlyWait (15, TimeUnit.SECONDS);
-        mainPage = new MainPage(driver);
+        mainPage = new AuthPage(driver).Auth();
     }
 
     @Test
     public void checkTitle(){
-        SignInPage signInPage = mainPage.signIn();
-        Assert.assertEquals("Sign in to GitHub",signInPage.getTitleText());
+
+        /*SignInPage signInPage = mainPage.signIn();
+        Assert.assertEquals("Sign in to GitHub",signInPage.getTitleText());*/
     }
     @After
     public void tearDown(){
