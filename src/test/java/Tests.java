@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class Tests {
     private WebDriver driver;
@@ -26,8 +28,14 @@ public class Tests {
     }
 
     @Test
-    public void checkTitle(){
-
+    public void checkProjects(){
+        ProjectsPage projectsPage = mainPage.projectsPage();
+        List<ProjectInfo> projects = projectsPage.projects();
+        Assert.assertTrue(projects.stream().map((item)->item.name).collect(Collectors.toList()).contains("test case"));
+        projectsPage.updateProject(projects.get(projects.size()-1),"TestProjectChange","Alex Semenenko");
+        projects = projectsPage.projects();
+        Assert.assertEquals("Alex Semenenko",projects.get(projects.size()-1).projectManager);
+        Assert.assertEquals("TestProjectChange",projects.get(projects.size()-1).name);
         /*SignInPage signInPage = mainPage.signIn();
         Assert.assertEquals("Sign in to GitHub",signInPage.getTitleText());*/
     }
