@@ -1,3 +1,6 @@
+package page;
+
+import model.ProjectInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class ProjectsPage {
@@ -31,7 +33,7 @@ public class ProjectsPage {
     private By itemOnPage = By.cssSelector("#root > div > div.LoggedLayout_longHeader__Cn0D\\+ > div.Projects_wrapper__nFoBm > div.Projects_tableView__D4DTG > div > div:nth-child(2) > div > div > div.MuiInputBase-root.MuiInputBase-colorPrimary.css-rmmij8");
     private By maxItemOnPage = By.cssSelector("#menu- > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiPaper-root.MuiMenu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-177ic5c > ul > li:nth-child(3)");
 
-    void addProject(String name, String clientName, String colorName) {
+    public void addProject(String name, String clientName, String colorName) {
         driver.findElement(addProjectButton).click();
         driver.findElement(projectNameField).sendKeys(name);
         driver.findElement(clientField).click();
@@ -39,7 +41,7 @@ public class ProjectsPage {
         clickOnItem(colorName, colors);
     }
 
-    List<ProjectInfo> projects() {
+    public List<ProjectInfo> projects() {
         WebElement nextButton = driver.findElement(nextPageButton);
         List<ProjectInfo> result = new LinkedList();
         //while (nextButton.isEnabled()){
@@ -58,7 +60,7 @@ public class ProjectsPage {
     private By projectManagerList = By.cssSelector("body > div.MuiDialog-root.ProfileLayout_modal__X6iNe.MuiModal-root.css-126xj0f > div.MuiDialog-container.MuiDialog-scrollBody.css-oxi3kn > div > div > div.ProjectAdminModal_textFieldBox__6zvPl.MuiBox-root.css-0 > div:nth-child(3) > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-9.css-14ybvol > div > div");
     private By saveButton = By.cssSelector("body > div.MuiDialog-root.ProfileLayout_modal__X6iNe.MuiModal-root.css-126xj0f > div.MuiDialog-container.MuiDialog-scrollBody.css-oxi3kn > div > div > div.ProjectAdminModal_textFieldBox__6zvPl.MuiBox-root.css-0 > div.ProjectAdminModal_buttonBox__NSMiF.MuiBox-root.css-0 > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.ProjectAdminModal_save__Re6RJ.css-j6crq6");
     private By projectManagers = By.cssSelector("#menu- > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiPaper-root.MuiMenu-paper.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-177ic5c > ul");
-    void updateProject(ProjectInfo project, String newName, String newProjectManager){
+    public void updateProject(ProjectInfo project, String newName, String newProjectManager){
         driver.findElement(table).findElements(By.tagName("tr")).get(project.index-1).click();
         WebElement field = driver.findElement(changeProjectNameField).findElement(By.tagName("input"));
         for (int i = 0; i < project.name.length();++i){
