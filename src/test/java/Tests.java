@@ -8,10 +8,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import page.AuthPage;
-import page.MainPage;
-import page.ProjectsPage;
-import page.TeamPage;
+import page.*;
 
 import java.util.Comparator;
 import java.util.List;
@@ -35,12 +32,19 @@ public class Tests {
         mainPage = new AuthPage(driver).Auth();
     }
     @Test
+    public void checkClients(){
+        ClientsPage clientsPage = mainPage.clientsPage();
+        clientsPage.addProject(0,"TestProjectChange");
+        Assert.assertTrue(clientsPage.getProjects(0).contains("TestProjectChange"));
+
+    }
+    @Test
     public void checkTeam(){
         TeamPage teamPage = mainPage.teamPage();
         List<Developer> team = teamPage.getTeam();
         team.sort(Comparator.comparingInt((Developer developer) -> developer.rate));
         teamPage.sortByRate();
-        Assert.assertTrue(Objects.equals(team, teamPage.getTeam()));
+        Assert.assertEquals(team, teamPage.getTeam());
     }
 
     @Test
