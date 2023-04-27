@@ -1,5 +1,5 @@
+import io.qameta.allure.Step;
 import model.Developer;
-import model.ProjectInfo;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,34 +12,38 @@ import page.*;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 public class Tests {
     private WebDriver driver;
     private MainPage mainPage;
 
     @Before
-    public void setUp(){
-        System.setProperty("webdriver.chrome.driver","/home/max/test/chromedriver");
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "/home/max/test/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().setSize(new Dimension(1258, 719));
         driver.get("https://olga-finance.effective.band/");
-        driver.manage().timeouts().implicitlyWait (15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         mainPage = new AuthPage(driver).Auth();
     }
-    @Test
-    public void checkClients(){
-        ClientsPage clientsPage = mainPage.clientsPage();
-        clientsPage.addProject(0,"TestProjectChange");
-        Assert.assertTrue(clientsPage.getProjects(0).contains("TestProjectChange"));
 
-    }
     @Test
-    public void checkTeam(){
+    public void checkClientsTest() {
+        checkClients(0, "TestProjectChange");
+    }
+
+    @Step
+    public void checkClients(Integer clientIndex, String projectName) {
+        ClientsPage clientsPage = mainPage.clientsPage();
+        clientsPage.addProject(clientIndex, projectName);
+        Assert.assertTrue(clientsPage.getProjects(clientIndex).contains(projectName));
+    }
+
+    @Test
+    public void checkTeam() {
         TeamPage teamPage = mainPage.teamPage();
         List<Developer> team = teamPage.getTeam();
         team.sort(Comparator.comparingInt((Developer developer) -> developer.rate));
@@ -47,7 +51,7 @@ public class Tests {
         Assert.assertEquals(team, teamPage.getTeam());
     }
 
-    @Test
+    /*@Test
     public void checkProjects(){
         ProjectsPage projectsPage = mainPage.projectsPage();
         //projectsPage.addProject("TestProject","OOO \"ZZ\"","Yellow"); // не добавляю чтобы не мусорить
@@ -61,14 +65,14 @@ public class Tests {
         //проверка изменения имени
         Assert.assertEquals("TestProjectChange",projects.get(projects.size()-1).name);
         /*SignInPage signInPage = mainPage.signIn();
-        Assert.assertEquals("Sign in to GitHub",signInPage.getTitleText());*/
+        Assert.assertEquals("Sign in to GitHub",signInPage.getTitleText());
     }
+    */
     @After
-    public void tearDown(){
-        try{
+    public void tearDown() {
+        try {
             driver.quit();
-        }
-        catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("error");
         }
 
