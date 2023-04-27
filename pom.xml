@@ -30,6 +30,12 @@
       <artifactId>allure-junit4</artifactId>
       <version>${allure-junit4.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-commandline</artifactId>
+      <version>2.12.1</version>
+      <type>zip</type>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -40,6 +46,10 @@
         <configuration>
           <testFailureIgnore>false</testFailureIgnore>
           <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+          <suiteXmlFiles>
+            <suiteXmlFile>src/test/resources/runner/testng.xml</suiteXmlFile>
+
+          </suiteXmlFiles>
           <properties>
             <property>
               <name>listener</name>
@@ -67,8 +77,24 @@
         <version>2.9</version>
         <configuration>
           <reportVersion>2.6.0</reportVersion>
+          <installDirectory>${project.build.directory}</installDirectory>
+          <allureDownloadUrl>
+            https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip
+          </allureDownloadUrl>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+          <!-- alternatively the below configuration properties can be used - doesn't matter really -->
+          <!-- <source>11</source> -->
+          <!-- <target>11</target> -->
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 </project>

@@ -1,0 +1,9 @@
+model/ProjectInfo.class
+page/ProjectsPage.class
+page/TeamPage.class
+page/AuthPage.class
+model/Developer.class
+page/ClientsPage.class
+Main.class
+model/AuthInfo.class
+page/MainPage.class
