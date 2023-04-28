@@ -31,7 +31,7 @@ public class ClientsPage {
     public List<String> getProjects(int clientIndex){
         WebElement client = driver.findElement(table).findElements(By.tagName("tr")).get(clientIndex);
         List<String> projects = new LinkedList<>();
-        for (var project: client.findElements(By.tagName("span"))){
+        for (WebElement project: client.findElements(By.tagName("span"))){
             projects.add(project.getText());
         };
         return projects;

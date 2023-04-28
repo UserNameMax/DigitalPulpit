@@ -1,0 +1,52 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "max-vivobook",
+    "children" : [ {
+      "name" : "40565@max-vivobook.main(1)",
+      "children" : [ {
+        "name" : "checkTeam",
+        "uid" : "34edbb29a47d6035",
+        "parentUid" : "cfa161c7b7dfa928bfc607e96901945d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1683112752163,
+          "stop" : 1683112758912,
+          "duration" : 6749
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "checkClientsTest",
+        "uid" : "5f87d44c5a58ccbc",
+        "parentUid" : "cfa161c7b7dfa928bfc607e96901945d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1683112742499,
+          "stop" : 1683112752002,
+          "duration" : 9503
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "authTest",
+        "uid" : "233a40933568faa7",
+        "parentUid" : "cfa161c7b7dfa928bfc607e96901945d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1683112758951,
+          "stop" : 1683112782636,
+          "duration" : 23685
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cfa161c7b7dfa928bfc607e96901945d"
+    } ],
+    "uid" : "1870449b2941d907ba7a6cb7e3711e03"
+  } ]
+}

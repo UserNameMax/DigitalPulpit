@@ -1,4 +1,6 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import model.AuthInfo;
 import model.Developer;
 import org.junit.*;
 import org.openqa.selenium.Dimension;
@@ -24,11 +26,34 @@ public class Tests {
         driver.manage().window().setSize(new Dimension(1258, 719));
         driver.get("https://olga-finance.effective.band/");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        mainPage = new AuthPage(driver).Auth();
+        //mainPage = new AuthPage(driver).Auth(AuthInfo.login,AuthInfo.password);
     }
 
     @Test
+    @Description(value = "Тест проверяет форму входа")
+    public void authTest(){
+        auth("root@mail.ru","admin");
+        Assert.assertFalse(mainPage.isLogIn());
+        new AuthPage(driver).clearFields("root@mail.ru","admin");
+        auth(AuthInfo.login,AuthInfo.password);
+        Assert.assertTrue(mainPage.isLogIn());
+    }
+    @Step
+    public void auth(String login, String password){
+        mainPage = new AuthPage(driver).Auth(login,password);
+    }
+
+    @Step
+    public void auth(Integer clientIndex, String projectName) {
+        ClientsPage clientsPage = mainPage.clientsPage();
+        clientsPage.addProject(clientIndex, projectName);
+        Assert.assertTrue(clientsPage.getProjects(clientIndex).contains(projectName));
+    }
+
+    @Test
+    @Description(value = "Тест проверяет добавление клиента в карточку проекта")
     public void checkClientsTest() {
+        auth(AuthInfo.login,AuthInfo.password);
         checkClients(0, "TestProjectChange");
     }
 
@@ -40,31 +65,15 @@ public class Tests {
     }
 
     @Test
+    @Description(value = "Тест проверяет сортировку команд по rate")
     public void checkTeam() {
+        auth(AuthInfo.login,AuthInfo.password);
         TeamPage teamPage = mainPage.teamPage();
         List<Developer> team = teamPage.getTeam();
         team.sort(Comparator.comparingInt((Developer developer) -> developer.rate));
         teamPage.sortByRate();
         Assert.assertEquals(team, teamPage.getTeam());
     }
-
-    /*@Test
-    public void checkProjects(){
-        ProjectsPage projectsPage = mainPage.projectsPage();
-        //projectsPage.addProject("TestProject","OOO \"ZZ\"","Yellow"); // не добавляю чтобы не мусорить
-        List<ProjectInfo> projects = projectsPage.projects();
-        //проверка добавления
-        Assert.assertTrue(projects.stream().map((item)->item.name).collect(Collectors.toList()).contains("TestProject"));
-        projectsPage.updateProject(projects.get(projects.size()-1),"TestProjectChange","Alex Semenenko");
-        projects = projectsPage.projects();
-        //проверка обновления менеджера
-        Assert.assertEquals("Alex Semenenko",projects.get(projects.size()-1).projectManager);
-        //проверка изменения имени
-        Assert.assertEquals("TestProjectChange",projects.get(projects.size()-1).name);
-        /*SignInPage signInPage = mainPage.signIn();
-        Assert.assertEquals("Sign in to GitHub",signInPage.getTitleText());
-    }
-    */
     @After
     public void tearDown() {
         try {

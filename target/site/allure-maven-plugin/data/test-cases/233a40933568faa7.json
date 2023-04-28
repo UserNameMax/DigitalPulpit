@@ -1,0 +1,111 @@
+{
+  "uid" : "233a40933568faa7",
+  "name" : "authTest",
+  "fullName" : "Tests.authTest",
+  "historyId" : "4b0214e5daf4871abe1cacd206599027",
+  "time" : {
+    "start" : 1683112758951,
+    "stop" : 1683112782636,
+    "duration" : 23685
+  },
+  "description" : "Тест проверяет форму входа",
+  "descriptionHtml" : "<p>Тест проверяет форму входа</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Тест проверяет форму входа",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "auth",
+      "time" : {
+        "start" : 1683112764912,
+        "stop" : 1683112765494,
+        "duration" : 582
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "login",
+        "value" : "root@mail.ru"
+      }, {
+        "name" : "password",
+        "value" : "admin"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "auth",
+      "time" : {
+        "start" : 1683112781606,
+        "stop" : 1683112782101,
+        "duration" : 495
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "login",
+        "value" : "admin@gmail.com"
+      }, {
+        "name" : "password",
+        "value" : "olga_finance"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "authTest"
+  }, {
+    "name" : "suite",
+    "value" : "Tests"
+  }, {
+    "name" : "host",
+    "value" : "max-vivobook"
+  }, {
+    "name" : "thread",
+    "value" : "40565@max-vivobook.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "233a40933568faa7.json",
+  "parameterValues" : [ ]
+}
