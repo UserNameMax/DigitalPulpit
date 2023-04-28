@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>tests</artifactId>
@@ -9,8 +9,9 @@
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
-    <aspectj.version>1.8.10</aspectj.version>
+    <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+    <aspectj.version>1.8.0</aspectj.version>
+    <slf4j.version>2.0.7</slf4j.version>
     <allure-junit4.version>2.6.0</allure-junit4.version>
   </properties>
   <dependencies>
@@ -23,19 +24,29 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>RELEASE</version>
-      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.7.1</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-junit4</artifactId>
       <version>${allure-junit4.version}</version>
     </dependency>
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-commandline</artifactId>
-      <version>2.12.1</version>
-      <type>zip</type>
-    </dependency>
+
   </dependencies>
   <build>
     <plugins>
@@ -83,18 +94,7 @@
           </allureDownloadUrl>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>11</release>
-          <!-- alternatively the below configuration properties can be used - doesn't matter really -->
-          <!-- <source>11</source> -->
-          <!-- <target>11</target> -->
-        </configuration>
-      </plugin>
-
     </plugins>
+
   </build>
 </project>
