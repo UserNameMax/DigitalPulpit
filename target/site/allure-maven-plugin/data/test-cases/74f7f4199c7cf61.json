@@ -1,12 +1,12 @@
 {
-  "uid" : "34edbb29a47d6035",
+  "uid" : "74f7f4199c7cf61",
   "name" : "checkTeam",
   "fullName" : "Tests.checkTeam",
   "historyId" : "2fad37ce3bfc8a9aca4e36d6d1d1cf65",
   "time" : {
-    "start" : 1683112752163,
-    "stop" : 1683112758912,
-    "duration" : 6749
+    "start" : 1683719565416,
+    "stop" : 1683719571146,
+    "duration" : 5730
   },
   "description" : "Тест проверяет сортировку команд по rate",
   "descriptionHtml" : "<p>Тест проверяет сортировку команд по rate</p>\n",
@@ -20,9 +20,9 @@
     "steps" : [ {
       "name" : "auth",
       "time" : {
-        "start" : 1683112755544,
-        "stop" : 1683112756254,
-        "duration" : 710
+        "start" : 1683719567726,
+        "stop" : 1683719568425,
+        "duration" : 699
       },
       "status" : "passed",
       "steps" : [ ],
@@ -39,10 +39,16 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     } ],
-    "attachments" : [ ],
+    "attachments" : [ {
+      "uid" : "e4d05a5ab05d24db",
+      "name" : "Page screenshot",
+      "source" : "e4d05a5ab05d24db.png",
+      "type" : "image/png",
+      "size" : 83808
+    } ],
     "parameters" : [ ],
     "stepsCount" : 1,
-    "attachmentsCount" : 0,
+    "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
@@ -64,7 +70,7 @@
     "value" : "max-vivobook"
   }, {
     "name" : "thread",
-    "value" : "40565@max-vivobook.main(1)"
+    "value" : "68431@max-vivobook.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -85,6 +91,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "34edbb29a47d6035.json",
+  "source" : "74f7f4199c7cf61.json",
   "parameterValues" : [ ]
 }

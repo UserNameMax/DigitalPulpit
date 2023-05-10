@@ -1,12 +1,12 @@
 {
-  "uid" : "233a40933568faa7",
+  "uid" : "569533c4b34c5a47",
   "name" : "authTest",
   "fullName" : "Tests.authTest",
   "historyId" : "4b0214e5daf4871abe1cacd206599027",
   "time" : {
-    "start" : 1683112758951,
-    "stop" : 1683112782636,
-    "duration" : 23685
+    "start" : 1683719571162,
+    "stop" : 1683719591546,
+    "duration" : 20384
   },
   "description" : "Тест проверяет форму входа",
   "descriptionHtml" : "<p>Тест проверяет форму входа</p>\n",
@@ -20,16 +20,16 @@
     "steps" : [ {
       "name" : "auth",
       "time" : {
-        "start" : 1683112764912,
-        "stop" : 1683112765494,
-        "duration" : 582
+        "start" : 1683719573226,
+        "stop" : 1683719573887,
+        "duration" : 661
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "login",
-        "value" : "root@mail.ru"
+        "value" : "adm1n@gmail.com"
       }, {
         "name" : "password",
         "value" : "admin"
@@ -41,9 +41,9 @@
     }, {
       "name" : "auth",
       "time" : {
-        "start" : 1683112781606,
-        "stop" : 1683112782101,
-        "duration" : 495
+        "start" : 1683719590298,
+        "stop" : 1683719590799,
+        "duration" : 501
       },
       "status" : "passed",
       "steps" : [ ],
@@ -60,10 +60,22 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     } ],
-    "attachments" : [ ],
+    "attachments" : [ {
+      "uid" : "1c9fad33cc0676a2",
+      "name" : "Page screenshot",
+      "source" : "1c9fad33cc0676a2.png",
+      "type" : "image/png",
+      "size" : 25497
+    }, {
+      "uid" : "b27570d8353b5da8",
+      "name" : "Page screenshot",
+      "source" : "b27570d8353b5da8.png",
+      "type" : "image/png",
+      "size" : 46314
+    } ],
     "parameters" : [ ],
     "stepsCount" : 2,
-    "attachmentsCount" : 0,
+    "attachmentsCount" : 2,
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
@@ -85,7 +97,7 @@
     "value" : "max-vivobook"
   }, {
     "name" : "thread",
-    "value" : "40565@max-vivobook.main(1)"
+    "value" : "68431@max-vivobook.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -106,6 +118,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "233a40933568faa7.json",
+  "source" : "569533c4b34c5a47.json",
   "parameterValues" : [ ]
 }

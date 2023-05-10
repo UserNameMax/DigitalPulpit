@@ -1,12 +1,12 @@
 {
-  "uid" : "5f87d44c5a58ccbc",
+  "uid" : "7e391a478ef2763a",
   "name" : "checkClientsTest",
   "fullName" : "Tests.checkClientsTest",
   "historyId" : "9e781a11ed29f76aba774ab61e92cdc3",
   "time" : {
-    "start" : 1683112742499,
-    "stop" : 1683112752002,
-    "duration" : 9503
+    "start" : 1683719557516,
+    "stop" : 1683719565253,
+    "duration" : 7737
   },
   "description" : "Тест проверяет добавление клиента в карточку проекта",
   "descriptionHtml" : "<p>Тест проверяет добавление клиента в карточку проекта</p>\n",
@@ -20,9 +20,9 @@
     "steps" : [ {
       "name" : "auth",
       "time" : {
-        "start" : 1683112748766,
-        "stop" : 1683112749508,
-        "duration" : 742
+        "start" : 1683719562018,
+        "stop" : 1683719562755,
+        "duration" : 737
       },
       "status" : "passed",
       "steps" : [ ],
@@ -41,9 +41,9 @@
     }, {
       "name" : "checkClients",
       "time" : {
-        "start" : 1683112749509,
-        "stop" : 1683112751886,
-        "duration" : 2377
+        "start" : 1683719562756,
+        "stop" : 1683719564967,
+        "duration" : 2211
       },
       "status" : "passed",
       "steps" : [ ],
@@ -60,10 +60,16 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     } ],
-    "attachments" : [ ],
+    "attachments" : [ {
+      "uid" : "e9843a551c9b13f4",
+      "name" : "Page screenshot",
+      "source" : "e9843a551c9b13f4.png",
+      "type" : "image/png",
+      "size" : 75536
+    } ],
     "parameters" : [ ],
     "stepsCount" : 2,
-    "attachmentsCount" : 0,
+    "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
@@ -85,7 +91,7 @@
     "value" : "max-vivobook"
   }, {
     "name" : "thread",
-    "value" : "40565@max-vivobook.main(1)"
+    "value" : "68431@max-vivobook.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -106,6 +112,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5f87d44c5a58ccbc.json",
+  "source" : "7e391a478ef2763a.json",
   "parameterValues" : [ ]
 }
