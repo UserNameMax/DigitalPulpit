@@ -1,9 +1,12 @@
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import model.AuthInfo;
 import model.Developer;
 import org.junit.*;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +20,10 @@ public class Tests {
     private WebDriver driver;
     private MainPage mainPage;
 
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] saveScreenshotPNG (WebDriver driver) {
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+    }
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/home/max/test/chromedriver");
@@ -32,15 +39,18 @@ public class Tests {
     @Test
     @Description(value = "Тест проверяет форму входа")
     public void authTest(){
-        auth("root@mail.ru","admin");
+        auth("adm1n@gmail.com","admin");
         Assert.assertFalse(mainPage.isLogIn());
-        new AuthPage(driver).clearFields("root@mail.ru","admin");
+        //saveScreenshotPNG(driver);
+        new AuthPage(driver).clearFields("adm1n@gmail.com","o_finance");
         auth(AuthInfo.login,AuthInfo.password);
         Assert.assertTrue(mainPage.isLogIn());
+        saveScreenshotPNG(driver);
     }
     @Step
     public void auth(String login, String password){
         mainPage = new AuthPage(driver).Auth(login,password);
+        saveScreenshotPNG(driver);
     }
 
     @Step
@@ -55,6 +65,7 @@ public class Tests {
     public void checkClientsTest() {
         auth(AuthInfo.login,AuthInfo.password);
         checkClients(0, "TestProjectChange");
+        saveScreenshotPNG(driver);
     }
 
     @Step
@@ -73,6 +84,7 @@ public class Tests {
         team.sort(Comparator.comparingInt((Developer developer) -> developer.rate));
         teamPage.sortByRate();
         Assert.assertEquals(team, teamPage.getTeam());
+        saveScreenshotPNG(driver);
     }
     @After
     public void tearDown() {

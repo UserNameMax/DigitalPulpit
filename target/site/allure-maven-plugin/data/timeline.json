@@ -4,48 +4,48 @@
   "children" : [ {
     "name" : "max-vivobook",
     "children" : [ {
-      "name" : "40565@max-vivobook.main(1)",
+      "name" : "68431@max-vivobook.main(1)",
       "children" : [ {
-        "name" : "checkTeam",
-        "uid" : "34edbb29a47d6035",
-        "parentUid" : "cfa161c7b7dfa928bfc607e96901945d",
+        "name" : "authTest",
+        "uid" : "569533c4b34c5a47",
+        "parentUid" : "7bddf50072535b9310c89ffd206b665c",
         "status" : "passed",
         "time" : {
-          "start" : 1683112752163,
-          "stop" : 1683112758912,
-          "duration" : 6749
+          "start" : 1683719571162,
+          "stop" : 1683719591546,
+          "duration" : 20384
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "checkTeam",
+        "uid" : "74f7f4199c7cf61",
+        "parentUid" : "7bddf50072535b9310c89ffd206b665c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1683719565416,
+          "stop" : 1683719571146,
+          "duration" : 5730
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "checkClientsTest",
-        "uid" : "5f87d44c5a58ccbc",
-        "parentUid" : "cfa161c7b7dfa928bfc607e96901945d",
+        "uid" : "7e391a478ef2763a",
+        "parentUid" : "7bddf50072535b9310c89ffd206b665c",
         "status" : "passed",
         "time" : {
-          "start" : 1683112742499,
-          "stop" : 1683112752002,
-          "duration" : 9503
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "authTest",
-        "uid" : "233a40933568faa7",
-        "parentUid" : "cfa161c7b7dfa928bfc607e96901945d",
-        "status" : "passed",
-        "time" : {
-          "start" : 1683112758951,
-          "stop" : 1683112782636,
-          "duration" : 23685
+          "start" : 1683719557516,
+          "stop" : 1683719565253,
+          "duration" : 7737
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "cfa161c7b7dfa928bfc607e96901945d"
+      "uid" : "7bddf50072535b9310c89ffd206b665c"
     } ],
     "uid" : "1870449b2941d907ba7a6cb7e3711e03"
   } ]

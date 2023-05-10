@@ -3,39 +3,39 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "checkClientsTest",
-    "uid" : "5f87d44c5a58ccbc",
+    "uid" : "7e391a478ef2763a",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1683112742499,
-      "stop" : 1683112752002,
-      "duration" : 9503
+      "start" : 1683719557516,
+      "stop" : 1683719565253,
+      "duration" : 7737
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "checkTeam",
-    "uid" : "34edbb29a47d6035",
+    "uid" : "74f7f4199c7cf61",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1683112752163,
-      "stop" : 1683112758912,
-      "duration" : 6749
+      "start" : 1683719565416,
+      "stop" : 1683719571146,
+      "duration" : 5730
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
     "name" : "authTest",
-    "uid" : "233a40933568faa7",
+    "uid" : "569533c4b34c5a47",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1683112758951,
-      "stop" : 1683112782636,
-      "duration" : 23685
+      "start" : 1683719571162,
+      "stop" : 1683719591546,
+      "duration" : 20384
     },
     "flaky" : false,
     "newFailed" : false,
